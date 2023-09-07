@@ -1,32 +1,8 @@
 <?php
-	$members = [
-		'tabIcon' => 'assets/images/bbb.png',
-		'pageTitle' => 'Team BBB',
-		'pageFooter' => 'Ben Molloy, Brandon Cooper, Ben Acuff',
-		'memberInfo' => 
-		[
-			[
-				'name' => 'Brandon Cooper',
-				'headshot' => 'assets/images/Brandon.jpg',
-				'role' => 'Wizard Coder',
-				'link' => '2',
-			],
-			[
-				'name' => 'Ben Molloy',
-				'headshot' => 'assets/images/BenMProfile.jpg',
-				'role' => 'Mystical Coder',
-				'link' => '0',
-			],
-			[
-				'name' => 'Ben Acuff',
-				'headshot' => 'assets/images/BenAProfile.jpg',
-				'role' => 'Godly Coder',
-				'link' => '1',
-			],
-		],
-	]
-
+	require_once('data.php');
+	require_once('functions.php')
 ?>
+
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
@@ -38,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Your name's resume">
     <meta name="author" content="Your name">    
-    <link rel="shortcut icon" href="<?=$resumes['tabIcon']?>"> 
+    <link rel="shortcut icon" href="<?=$members['tabIcon']?>"> 
     
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
