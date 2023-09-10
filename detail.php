@@ -44,8 +44,15 @@ require_once('functions.php')
 					    <div class="row p-4 justify-content-center justify-content-md-between">
 						    <div class="primary-info col-auto">
 							    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase"><?=$resumes[$currentPage]['Header']['Name'];?></h1>
-							    <div class="title mb-3"><?=$resumes[$currentPage]['Header']['Position'];?></div>
-							    <ul class="list-unstyled">
+							    <?php
+                                $dateOfBirth = $resumes[$currentPage]['Header']['dob'];
+                                $age = calculateAge($dateOfBirth);
+                                ?>
+								<div class="title mb-3">
+    								<?=$resumes[$currentPage]['Header']['Position'];?><br>
+    								<?=$age;?> Years Old
+								</div>
+						    <ul class="list-unstyled">
 								    <li class="mb-2"><a class="text-link" href="mailto:<?=$resumes[$currentPage]['Header']['Email'];?>"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?=$resumes[$currentPage]['Header']['Email'];?></li>
 								    <li><a class="text-link" href="tel:<?=$resumes[$currentPage]['Header']['Phone'];?>"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i><?=$resumes[$currentPage]['Header']['Phone'];?></a></li>
 							    </ul>
@@ -78,37 +85,8 @@ require_once('functions.php')
 								    
 									<?php
 										foreach ($resumes[$currentPage]['WorkExperience'] as $key => $Job) {
-											echo '										<article class="resume-timeline-item position-relative pb-5">
-											
-											<div class="resume-timeline-item-header mb-2">
-												<div class="d-flex flex-column flex-md-row">
-													<h3 class="resume-position-title font-weight-bold mb-1">' . $Job['Job_Title'] . '</h3>
-													<div class="resume-company-name ms-auto">' . $Job['Job_Location'] . '</div>
-												</div><!--//row-->
-												<div class="resume-position-time">' . $Job['Job_StartFinish'] . '</div>
-											</div><!--//resume-timeline-item-header-->
-											<div class="resume-timeline-item-desc">
-												<p>' . $Job['Job_Descr'] . '</h4>
-												<p>' . $Job['Job_AchDescr'] . '</p>
-												<ul>
-													<li>' . $Job['Job_Ach_1'] . '</li>
-													<li>' . $Job['Job_Ach_2'] . '</li>
-													<li>' . $Job['Job_Ach_3'] . '</li>
-													<li>' . $Job['Job_Ach_4'] . '</li>
-												</ul>
-												<h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-												<ul class="list-inline">
-													<li class="list-inline-item"><span class="badge bg-secondary badge-pill">' . $Job['Job_TechUsed_1'] . '</span></li>
-													<li class="list-inline-item"><span class="badge bg-secondary badge-pill">' . $Job['Job_TechUsed_2'] . '</span></li>
-													<li class="list-inline-item"><span class="badge bg-secondary badge-pill">' . $Job['Job_TechUsed_3'] . '</span></li>
-													<li class="list-inline-item"><span class="badge bg-secondary badge-pill">' . $Job['Job_TechUsed_4'] . '</span></li>
-													<li class="list-inline-item"><span class="badge bg-secondary badge-pill">' . $Job['Job_TechUsed_5'] . '</span></li>
-												</ul>
-											</div><!--//resume-timeline-item-desc-->
-
-										</article><!--//resume-timeline-item-->';
+											DisplayWorkExperience($Job);
 										}
-
 									?>
 								         
 							    </div><!--//resume-timeline-->
