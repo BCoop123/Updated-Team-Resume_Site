@@ -75,20 +75,12 @@ require_once('functions.php')
 						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Work Experience</h2>
 						    <div class="resume-section-content">
 							    <div class="resume-timeline position-relative">
-								    
 									<?php
 										foreach ($resumes[$currentPage]['WorkExperience'] as $key => $Job) {
 											DisplayWorkExperience($Job);
 										}
-									?>
-								         
+									?>        
 							    </div><!--//resume-timeline-->
-							    
-							    
-							    
-							    
-							    
-							    
 						    </div>
 					    </section><!--//projects-section-->
 				    </div>
