@@ -33,4 +33,13 @@ function DisplayWorkExperience($Job) {
 	</article><!--//resume-timeline-item-->';
 }
 
+// Function to calculate age based on date of birth
+function calculateAge($dob) {
+    $currentDate = new DateTime();
+    $birthdate = new DateTime($dob);
+    $age = $currentDate->diff($birthdate)->y;
+    return $age;
+}
+
+
 ?>

@@ -32,6 +32,7 @@ require_once('functions.php')
 	    <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
 			<h1 class="py-4 text-center"><?=$members['pageTitle'];?></h1>
 			<?php foreach ($members['memberInfo'] as $key => $userInfo){
+					$age = calculateAge($userInfo['dob']);
 					echo '
 					<header class="resume-header pt-4 pt-md-0">
 						<div class="row">
@@ -42,8 +43,7 @@ require_once('functions.php')
 								<div class="row p-4 justify-content-center justify-content-md-between">
 									<div class="primary-info col-auto">
 										<h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">' . $userInfo['name'] . '</h1>
-										<div class="title mb-3">' . $userInfo['role'] . '</div>
-
+										<div class="title mb-3">' . $userInfo['role'] . ' | ' . $age . ' Years Old</div> <!-- Display the role and age -->
 										<a href="detail.php?index='. $userInfo['link'] .'" class="btn btn-secondary">See full profile</a>
 									</div><!--//primary-info-->
 									<div class="secondary-info col-auto mt-2">

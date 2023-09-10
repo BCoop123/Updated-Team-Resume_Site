@@ -11,18 +11,21 @@ $members = [
             'headshot' => './assets/images/Brandon.jpg',
             'role' => 'Wizard Coder',
             'link' => '2',
+			'dob' => "2002-5-17"
         ],
         [
             'name' => 'Ben Molloy',
             'headshot' => './assets/images/BenMProfile.jpg',
             'role' => 'Mystical Coder',
             'link' => '0',
+			'dob' => '2002-06-08'
         ],
         [
             'name' => 'Ben Acuff',
             'headshot' => './assets/images/BenAProfile.jpg',
             'role' => 'Godly Coder',
             'link' => '1',
+			'dob' => '2002-07-22'
         ],
     ],
 ];
@@ -42,7 +45,8 @@ $resumes = [
 				'LinkedIn' => 'https://www.linkedin.com/in/ben-molloy',
 				'GitHub' => 'https://www.github.com/btmolloy',
 				'Website' =>  'https://www.BenMolloy.com',
-				'RickRoll' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+				'RickRoll' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+				'dob' => '2002-06-08'
 		],
 
 		'Summary' =>
@@ -216,7 +220,8 @@ $resumes = [
 				'LinkedIn' => 'https://www.linkedin.com/in/benjaminacuff',
 				'GitHub' => 'https://www.github.com/benjaminacuff',
 				'Website' =>  'https://www.benacuff.com',
-				'RickRoll' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+				'RickRoll' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+				'dob' => '2002-07-22',
 		],
 		
 		'Summary' =>
@@ -347,7 +352,8 @@ $resumes = [
 			'LinkedIn' => 'www.linkedin.com/in/brandon-cooper-0',
 			'GitHub' => 'https://github.com/BCoop123',
 			'Website' =>  'https://bcoop123.com',
-			'RickRoll' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+			'RickRoll' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+			'dob' => '2002-5-17',
 		],
 	
 		'Summary' =>

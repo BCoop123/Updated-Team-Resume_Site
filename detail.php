@@ -44,8 +44,15 @@ require_once('functions.php')
 					    <div class="row p-4 justify-content-center justify-content-md-between">
 						    <div class="primary-info col-auto">
 							    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase"><?=$resumes[$currentPage]['Header']['Name'];?></h1>
-							    <div class="title mb-3"><?=$resumes[$currentPage]['Header']['Position'];?></div>
-							    <ul class="list-unstyled">
+							    <?php
+                                $dateOfBirth = $resumes[$currentPage]['Header']['dob'];
+                                $age = calculateAge($dateOfBirth);
+                                ?>
+								<div class="title mb-3">
+    								<?=$resumes[$currentPage]['Header']['Position'];?><br>
+    								<?=$age;?> Years Old
+								</div>
+						    <ul class="list-unstyled">
 								    <li class="mb-2"><a class="text-link" href="mailto:<?=$resumes[$currentPage]['Header']['Email'];?>"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?=$resumes[$currentPage]['Header']['Email'];?></li>
 								    <li><a class="text-link" href="tel:<?=$resumes[$currentPage]['Header']['Phone'];?>"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i><?=$resumes[$currentPage]['Header']['Phone'];?></a></li>
 							    </ul>
