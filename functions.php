@@ -13,13 +13,11 @@ function populateIndexCards($userInfo){
 						<h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">' . $userInfo['name'] . '</h1>
 						<p> Age: ' . calculateAge($userInfo['dob']) . '</p>
 						<div class="title mb-3">' . $userInfo['role'] . '</div>
-
 						<a href="detail.php?index='. $userInfo['link'] .'" class="btn btn-secondary">See full profile</a>
 					</div><!--//primary-info-->
 					<div class="secondary-info col-auto mt-2">
 					</div><!--//secondary-info-->
-				</div><!--//row-->
-				
+				</div><!--//row-->		
 			</div><!--//col-->
 		</div><!--//row-->
 	</header>';
@@ -28,7 +26,6 @@ function populateIndexCards($userInfo){
 function DisplayWorkExperience($Job) {
 	echo '
 	<article class="resume-timeline-item position-relative pb-5">
-		
 		<div class="resume-timeline-item-header mb-2">
 			<div class="d-flex flex-column flex-md-row">
 				<h3 class="resume-position-title font-weight-bold mb-1">' . $Job['Job_Title'] . '</h3>
@@ -54,7 +51,6 @@ function DisplayWorkExperience($Job) {
 				<li class="list-inline-item"><span class="badge bg-secondary badge-pill">' . $Job['Job_TechUsed_5'] . '</span></li>
 			</ul>
 		</div><!--//resume-timeline-item-desc-->
-
 	</article><!--//resume-timeline-item-->';
 }
 
