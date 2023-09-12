@@ -1,6 +1,5 @@
 <?php
 $currentPage = $_GET['index'];
-
 require_once('data.php');
 require_once('functions.php')
 ?>
@@ -27,9 +26,7 @@ require_once('functions.php')
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/pillar-1.css">
 
-
 </head> 
-
 <body>
     <article class="resume-wrapper text-center position-relative">
 		<?php /* Only the following line changed from the file in the previous assignment */ ?>
@@ -43,29 +40,28 @@ require_once('functions.php')
 				    <div class="col">
 					    <div class="row p-4 justify-content-center justify-content-md-between">
 						    <div class="primary-info col-auto">
-							    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase"><?=$resumes[$currentPage]['Header']['Name'];?></h1>
-							    <?php
-                                $dateOfBirth = $resumes[$currentPage]['Header']['dob'];
-                                $age = calculateAge($dateOfBirth);
-                                ?>
-								<div class="title mb-3">
+							<h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase"><?=$resumes[$currentPage]['Header']['Name'];?></h1>
+							<?php
+                                				$dateOfBirth = $resumes[$currentPage]['Header']['dob'];
+                                				$age = calculateAge($dateOfBirth);
+                               				?>
+							<div class="title mb-3">
     								<?=$resumes[$currentPage]['Header']['Position'];?><br>
     								<?=$age;?> Years Old
-								</div>
-						    <ul class="list-unstyled">
-								    <li class="mb-2"><a class="text-link" href="mailto:<?=$resumes[$currentPage]['Header']['Email'];?>"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?=$resumes[$currentPage]['Header']['Email'];?></li>
-								    <li><a class="text-link" href="tel:<?=$resumes[$currentPage]['Header']['Phone'];?>"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i><?=$resumes[$currentPage]['Header']['Phone'];?></a></li>
-							    </ul>
+							</div>
+						    	<ul class="list-unstyled">
+								<li class="mb-2"><a class="text-link" href="mailto:<?=$resumes[$currentPage]['Header']['Email'];?>"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?=$resumes[$currentPage]['Header']['Email'];?></li>
+								<li><a class="text-link" href="tel:<?=$resumes[$currentPage]['Header']['Phone'];?>"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i><?=$resumes[$currentPage]['Header']['Phone'];?></a></li>
+							</ul>
 						    </div><!--//primary-info-->
 						    <div class="secondary-info col-auto mt-2">
 							    <ul class="resume-social list-unstyled">
-					                <li class="mb-3"><a class="text-link" href="<?=$resumes[$currentPage]['Header']['RickRoll'];?>" target="_blank"><span class="fa-container text-center me-2"><i class="fab fa-linkedin-in fa-fw"></i></span><?=$resumes[$currentPage]['Header']['LinkedIn'];?></a></li>
-					                <li class="mb-3"><a class="text-link" href="<?=$resumes[$currentPage]['Header']['RickRoll'];?>" target="_blank"><span class="fa-container text-center me-2"><i class="fab fa-github-alt fa-fw"></i></span><?=$resumes[$currentPage]['Header']['GitHub'];?></a></li>
-					                <li><a class="text-link" href="<?=$resumes[$currentPage]['Header']['RickRoll'];?>" target="_blank"><span class="fa-container text-center me-2"><i class="fas fa-globe"></i></span><?=$resumes[$currentPage]['Header']['Website'];?></a></li>
+							        <li class="mb-3"><a class="text-link" href="<?=$resumes[$currentPage]['Header']['RickRoll'];?>" target="_blank"><span class="fa-container text-center me-2"><i class="fab fa-linkedin-in fa-fw"></i></span><?=$resumes[$currentPage]['Header']['LinkedIn'];?></a></li>
+							        <li class="mb-3"><a class="text-link" href="<?=$resumes[$currentPage]['Header']['RickRoll'];?>" target="_blank"><span class="fa-container text-center me-2"><i class="fab fa-github-alt fa-fw"></i></span><?=$resumes[$currentPage]['Header']['GitHub'];?></a></li>
+							        <li><a class="text-link" href="<?=$resumes[$currentPage]['Header']['RickRoll'];?>" target="_blank"><span class="fa-container text-center me-2"><i class="fas fa-globe"></i></span><?=$resumes[$currentPage]['Header']['Website'];?></a></li>
 							    </ul>
 						    </div><!--//secondary-info-->
 					    </div><!--//row-->
-					    
 				    </div><!--//col-->
 			    </div><!--//row-->
 		    </header>
@@ -190,39 +186,33 @@ require_once('functions.php')
 						foreach ($projects as $key => $Project) {
 							if ($key % 3 == 0) {
 								echo '<div class="row mt-4">';
-							}
+								}
 
-							echo '
-								<div class="col-md-4">
-									<div class="card">
-										<img src="' . $Project['ProjectIMG'] . '" alt="Project 1" class="card-img-top">
-										<div class="card-body">
-											<h5 class="card-title">' . $Project['ProjectTitle'] . '</h5>
-											<p class="card-text">' . $Project['ProjectDesc'] . '</p>
-											<a class="btn btn-outline-primary" href="' . $Project['RickRoll'] . '" target="_blank">Go to link</a>
-										</div>
-									</div>
-								</div>';
-
-							// End the row if it's the 3rd, 6th, 9th, etc. card or the last card
-							if (($key + 1) % 3 == 0 || $key == count($projects) - 1) {
-								echo '</div>';
+									echo '
+										<div class="col-md-4">
+											<div class="card">
+												<img src="' . $Project['ProjectIMG'] . '" alt="Project 1" class="card-img-top">
+												<div class="card-body">
+													<h5 class="card-title">' . $Project['ProjectTitle'] . '</h5>
+													<p class="card-text">' . $Project['ProjectDesc'] . '</p>
+													<a class="btn btn-outline-primary" href="' . $Project['RickRoll'] . '" target="_blank">Go to link</a>
+												</div>
+											</div>
+										</div>';
+									// End the row if it's the 3rd, 6th, 9th, etc. card or the last card
+									if (($key + 1) % 3 == 0 || $key == count($projects) - 1) {
+									echo '</div>';
 							}
 						}
 					?>
 			</section>
 		    </div><!--//resume-body-->
-		    
-		    
 	    </div>
     </article> 
-
-    
     <footer class="footer text-center pt-2 pb-5">
-	    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+	<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
         <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <?=$resumes[$currentPage]['Header']['Name'];?></small>
     </footer>
-
 </body>
 </html> 
 
