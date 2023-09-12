@@ -1,14 +1,13 @@
 <?php
 require_once('data.php');
 require_once('functions.php')
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
     <title><?=$members['pageTitle'];?></title>
-    
+	
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,12 +25,12 @@ require_once('functions.php')
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/pillar-1.css">
 </head> 
-
 <body>
     <article class="resume-wrapper text-center position-relative">
 	    <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
 			<h1 class="py-4 text-center"><?=$members['pageTitle'];?></h1>
-			<?php foreach ($members['memberInfo'] as $key => $userInfo){
+			<?php 
+				foreach ($members['memberInfo'] as $key => $userInfo){
 					populateIndexCards($userInfo);
 				}
 			?>
